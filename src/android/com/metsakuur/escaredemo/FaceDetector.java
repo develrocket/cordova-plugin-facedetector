@@ -11,9 +11,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.content.pm.PackageManager;
 
-import com.google.zxing.client.android.CaptureActivity;
-import com.google.zxing.client.android.Intents;
-
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
@@ -56,14 +53,19 @@ public class FaceDetector extends CordovaPlugin {
     public void scan(final JSONArray args) {
 
         final FaceDetector that = this;
+        String accountId = "";
+
+        try {
+            accountId = args.getString(0);
+        } catch (JSONException e) {
+
+        }
+
+        UFaceConfig.idkey = accountId;
 
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
-
-                Intent intentScan = new Intent(that.cordova.getActivity().getBaseContext(), CaptureActivity.class);
-                intentScan.setAction(Intents.Scan.ACTION);
-                intentScan.addCategory(Intent.CATEGORY_DEFAULT);
-
+                Intent intentScan = new Intent(that.cordova.getActivity().getBaseContext(), FaceCameraActivity.class);
                 // avoid calling other phonegap apps
                 intentScan.setPackage(that.cordova.getActivity().getApplicationContext().getPackageName());
                 that.cordova.startActivityForResult(that, intentScan, 0);

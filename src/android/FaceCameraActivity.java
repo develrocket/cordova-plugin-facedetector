@@ -115,8 +115,8 @@ public class FaceCameraActivity extends Activity implements UFaceDetectorListene
                                     JSONObject jsonObject = new JSONObject(response);
                                     String msg = jsonObject.has("msg") ? jsonObject.getString("msg") : "";
                                     String code = jsonObject.has("code") ? jsonObject.getString("code") : "";
-                                    String hash = jsonObject.has("hash") ? jsonObject.getString("hash") : "";
-                                    UFaceConfig.INSTANCE.setHASH(hash);
+                                    String custNo = jsonObject.has("cust_no") ? jsonObject.getString("cust_no") : "";
+                                    UFaceConfig.INSTANCE.setHASH(custNo);
 
                                     if (code.equals("00000")) {
                                         showAlertDialog("Success in registration face.", (DialogInterface.OnClickListener)(new DialogInterface.OnClickListener() {
@@ -158,8 +158,8 @@ public class FaceCameraActivity extends Activity implements UFaceDetectorListene
                                     JSONObject jsonObject = new JSONObject(response);
                                     String msg = jsonObject.has("msg") ? jsonObject.getString("msg") : "";
                                     String code = jsonObject.has("code") ? jsonObject.getString("code") : "";
-                                    String hash = jsonObject.has("hash") ? jsonObject.getString("hash") : "";
-                                    UFaceConfig.INSTANCE.setHASH(hash);
+                                    String custNo = jsonObject.has("cust_no") ? jsonObject.getString("cust_no") : "";
+                                    UFaceConfig.INSTANCE.setHASH(custNo);
 
                                     if (code.equals("00000")) {
                                         showAlertDialog(UFaceConfig.idkey + " Success in verification.", (DialogInterface.OnClickListener)(new DialogInterface.OnClickListener() {
@@ -200,7 +200,7 @@ public class FaceCameraActivity extends Activity implements UFaceDetectorListene
                                     String msg = jsonObject.has("msg") ? jsonObject.getString("msg") : "";
                                     String code = jsonObject.has("code") ? jsonObject.getString("code") : "";
                                     String custNo = jsonObject.has("cust_no") ? jsonObject.getString("cust_no") : "";
-
+                                    UFaceConfig.INSTANCE.setHASH(custNo);
                                     if (code.equals("00000")) {
                                         showAlertDialog(custNo + " Success in verification.", (DialogInterface.OnClickListener)(new DialogInterface.OnClickListener() {
                                             public final void onClick(DialogInterface dialog, int $noName_1) {

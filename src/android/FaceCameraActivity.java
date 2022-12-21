@@ -23,7 +23,7 @@ import com.metsakuur.ufacedetectorlite.model.UFaceDetectResult;
 import com.metsakuur.ufacedetectorlite.model.UFaceError;
 import com.metsakuur.ufacedetectorlite.util.UFaceLog;
 import com.metsakuur.ufacedetectorlite.util.UFaceUtils;
-import com.stanleyidesis.toastyplugintest.R;
+import capacitor.android.plugins.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;

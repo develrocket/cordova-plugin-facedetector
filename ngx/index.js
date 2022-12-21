@@ -16,7 +16,7 @@ var FaceDetector = /** @class */ (function (_super) {
     FaceDetector.pluginRef = "cordova.plugins.faceDetector";
     FaceDetector.repo = "E:/103.study/cordova/cordova-plugin-facedetector";
     FaceDetector.platforms = ["Android"];
-    FaceDetector = __decorate([], BarcodeScanner);
+    FaceDetector = __decorate([], FaceDetector);
     return FaceDetector;
 }(AwesomeCordovaNativePlugin));
 export { FaceDetector };

@@ -6,8 +6,8 @@ repositories{
 }
 
 dependencies {
-    compile(name:'UFaceDetectorLite1.0.2', ext:'aar')
-    compile(name:'UFaceFRClient1.0.0', ext:'aar')
+    implementation(name:'UFaceDetectorLite1.0.2', ext:'aar')
+    implementation(name:'UFaceFRClient1.0.0', ext:'aar')
 }
 
 android {

@@ -1,6 +1,9 @@
 {
   "name": "cordova-plugin-facedetector",
-  "version": "8.1.1-dev",
+  "version": "8.2.0",
+  "main": "bundle.js",
+  "module": "index.js",
+  "typings": "index.d.ts",
   "description": "cordova plugin facedector",
   "cordova": {
     "id": "cordova-plugin-facedetector",
@@ -49,6 +52,11 @@
   },
   "dependencies": {
     "nopt": "^4.0.1",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.3",
+    "@types/cordova": "latest"
+  },
+  "peerDependencies": {
+    "rxjs": "^5.5.0 || ^6.5.0 || ^7.3.0",
+    "@awesome-cordova-plugins/core": "^6.0.1"
   }
 }

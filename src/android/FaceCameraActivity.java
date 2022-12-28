@@ -30,7 +30,7 @@ import org.json.JSONObject;
 import java.io.*;
 import java.security.NoSuchAlgorithmException;
 
-public class FaceCameraActivity extends Activity implements UFaceDetectorListener {
+public class FaceCameraActivity extends AppCompatActivity implements UFaceDetectorListener {
 
     public Context context;
     public UFaceXPreviewView faceXPreviewView;

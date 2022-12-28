@@ -44,7 +44,7 @@
                 android:clearTaskOnLaunch="true"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:exported="false"
-                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden" />
+                android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="stateAlwaysHidden" />
         </config-file>
         <config-file parent="/manifest" target="AndroidManifest.xml">
             <uses-permission android:name="android.permission.CAMERA" />

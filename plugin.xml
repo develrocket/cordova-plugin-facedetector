@@ -27,12 +27,6 @@
         <source-file src="src/android/UFaceConfig.java"
             target-dir="app/src/main/java/com/metsakuur/escaredemo" />
 
-        <resource-file src="src/android/assets/antispoof_v2_bin.dat" target="assets/antispoof_v2_bin.dat" />
-        <resource-file src="src/android/assets/antispoof_v2se_bin.dat" target="assets/antispoof_v2se_bin.dat" />
-        <resource-file src="src/android/assets/eyeblink_bin.dat" target="assets/eyeblink_bin.dat" />
-        <resource-file src="src/android/assets/mobileattack_bin.dat" target="assets/mobileattack_bin.dat" />
-        <resource-file src="src/android/assets/ultraface_bin.dat" target="assets/ultraface_bin.dat" />
-
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="FaceDetector">
                 <param name="android-package"

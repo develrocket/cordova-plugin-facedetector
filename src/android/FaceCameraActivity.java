@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -29,6 +30,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.*;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
 public class FaceCameraActivity extends AppCompatActivity implements UFaceDetectorListener {
 
@@ -45,6 +47,8 @@ public class FaceCameraActivity extends AppCompatActivity implements UFaceDetect
         this.setContentView(R.layout.activity_face_camera);
         this.context = this;
         this.faceXPreviewView = findViewById(R.id.faceXPreviewView);
+
+        Log.d("ESLOG", "================================== start face detection ==========================================");
 
         this.initFaceDetector();
     }
@@ -84,6 +88,7 @@ public class FaceCameraActivity extends AppCompatActivity implements UFaceDetect
 
     public void uFaceDetector(UFaceDetector uFaceDetector, UFaceDetectResult result) {
         UFaceLog.d("UFaceDetectResult : " + result);
+        Log.d("ESLOG-DetectResult", String.valueOf(result));
 
         if (result.isFake) {
             uFaceDetector.stopDetect();
@@ -103,9 +108,14 @@ public class FaceCameraActivity extends AppCompatActivity implements UFaceDetect
             case 0:
                 //registration
                 try {
+                    Log.d("ESLOG-idKEY", UFaceConfig.idkey);
+                    Log.d("ESLOG-UUID", UFaceConfig.getUUID(context));
+                    Log.d("ESLOG-FaceData", Arrays.toString(UFaceUtils.getInstance().getJpegByte(result.cropImage, 90)));
+
+
                     UFaceHttpRequestManager.INSTANCE.requestRegist(
                         UFaceConfig.SERVER_IP + UFaceConfig.SERVER_PORT + UFaceConfig.SERVER_URL,
-                        UFaceConfig.idkey,
+                        UFaceConfig.getUUID(context), //idkey
                         UFaceConfig.getUUID(context),
                         UFaceUtils.getInstance().getJpegByte(result.cropImage, 90),
                         (UFaceHttpListener)(new UFaceHttpListener() {
@@ -117,6 +127,10 @@ public class FaceCameraActivity extends AppCompatActivity implements UFaceDetect
                                     String code = jsonObject.has("code") ? jsonObject.getString("code") : "";
                                     String custNo = jsonObject.has("cust_no") ? jsonObject.getString("cust_no") : "";
                                     UFaceConfig.INSTANCE.setHASH(custNo);
+
+                                    Log.d("ESLOG-Res-Msg", msg);
+                                    Log.d("ESLOG-Res-copde", code);
+                                    Log.d("ESLOG-Res-custNo", custNo);
 
                                     if (code.equals("00000")) {
                                         showAlertDialog("Success in registration face.", (DialogInterface.OnClickListener)(new DialogInterface.OnClickListener() {
@@ -323,6 +337,9 @@ public class FaceCameraActivity extends AppCompatActivity implements UFaceDetect
 
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        Log.d("ESLOG-EndScreen", UFaceConfig.INSTANCE.getHASH());
+
         Intent intent = new Intent();
         intent.putExtra("data", UFaceConfig.INSTANCE.getHASH());
         this.setResult(-1, intent);

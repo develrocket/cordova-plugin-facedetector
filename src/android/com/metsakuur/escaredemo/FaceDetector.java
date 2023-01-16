@@ -33,6 +33,8 @@ public class FaceDetector extends CordovaPlugin {
         this.callbackContext = callbackContext;
         this.requestArgs = args;
 
+        Log.d("ESLOG-CordovaExecute", String.valueOf(args));
+
         if (action.equals("scan")) {
 
             //android permission auto add
@@ -53,15 +55,18 @@ public class FaceDetector extends CordovaPlugin {
     public void scan(final JSONArray args) {
 
         final FaceDetector that = this;
-        String accountId = "";
+        String type = "";
 
         try {
-            accountId = args.getString(0);
+            type = args.getString(0);
         } catch (JSONException e) {
 
         }
 
-        UFaceConfig.idkey = accountId;
+//        UFaceConfig.idkey = type;
+        UFaceConfig.INSTANCE.setTYPE(Integer.parseInt(type));
+
+        Log.d("ESLOG-AccountId", type);
 
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {

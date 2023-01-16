@@ -169,8 +169,8 @@ public class FaceCameraActivity extends AppCompatActivity implements UFaceDetect
 
                     UFaceHttpRequestManager.INSTANCE.requestVerify(
                         UFaceConfig.SERVER_IP + UFaceConfig.SERVER_PORT + UFaceConfig.SERVER_URL,
-                        UFaceConfig.idkey,
                         UFaceConfig.getUUID(context),
+                        UFaceConfig.idkey,
                         UFaceUtils.getInstance().getJpegByte(result.cropImage, 90),
                         (UFaceHttpListener)(new UFaceHttpListener() {
                             public void onResponse(String response) {

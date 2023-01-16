@@ -49,7 +49,7 @@ public class FaceCameraActivity extends AppCompatActivity implements UFaceDetect
         this.faceXPreviewView = findViewById(R.id.faceXPreviewView);
 
         Log.d("ESLOG", "================================== start face detection ==========================================");
-
+        Log.d("ESLOG-UdeviceId", UFaceConfig.idkey);
         this.initFaceDetector();
     }
 
@@ -115,7 +115,7 @@ public class FaceCameraActivity extends AppCompatActivity implements UFaceDetect
 
                     UFaceHttpRequestManager.INSTANCE.requestRegist(
                         UFaceConfig.SERVER_IP + UFaceConfig.SERVER_PORT + UFaceConfig.SERVER_URL,
-                        UFaceConfig.getUUID(context), //idkey
+                        UFaceConfig.idkey,
                         UFaceConfig.getUUID(context),
                         UFaceUtils.getInstance().getJpegByte(result.cropImage, 90),
                         (UFaceHttpListener)(new UFaceHttpListener() {

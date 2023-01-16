@@ -56,17 +56,20 @@ public class FaceDetector extends CordovaPlugin {
 
         final FaceDetector that = this;
         String type = "";
+        String deviceId = "";
 
         try {
             type = args.getString(0);
+            deviceId = args.getString(1);
         } catch (JSONException e) {
 
         }
 
-//        UFaceConfig.idkey = type;
+        UFaceConfig.idkey = deviceId;
         UFaceConfig.INSTANCE.setTYPE(Integer.parseInt(type));
 
         Log.d("ESLOG-AccountId", type);
+        Log.d("ESLOG-deviceId", deviceId);
 
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {

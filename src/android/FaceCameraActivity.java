@@ -108,6 +108,7 @@ public class FaceCameraActivity extends AppCompatActivity implements UFaceDetect
             case 0:
                 //registration
                 try {
+                    Log.d("ESLOG-register", "=======================================================");
                     Log.d("ESLOG-idKEY", UFaceConfig.idkey);
                     Log.d("ESLOG-UUID", UFaceConfig.getUUID(context));
                     Log.d("ESLOG-FaceData", Arrays.toString(UFaceUtils.getInstance().getJpegByte(result.cropImage, 90)));
@@ -160,6 +161,12 @@ public class FaceCameraActivity extends AppCompatActivity implements UFaceDetect
             case 1:
                 //verify
                 try {
+                    Log.d("ESLOG-verify", "=======================================================");
+                    Log.d("ESLOG-idKEY", UFaceConfig.idkey);
+                    Log.d("ESLOG-UUID", UFaceConfig.getUUID(context));
+                    Log.d("ESLOG-FaceData", Arrays.toString(UFaceUtils.getInstance().getJpegByte(result.cropImage, 90)));
+
+
                     UFaceHttpRequestManager.INSTANCE.requestVerify(
                         UFaceConfig.SERVER_IP + UFaceConfig.SERVER_PORT + UFaceConfig.SERVER_URL,
                         UFaceConfig.idkey,
@@ -174,6 +181,10 @@ public class FaceCameraActivity extends AppCompatActivity implements UFaceDetect
                                     String code = jsonObject.has("code") ? jsonObject.getString("code") : "";
                                     String custNo = jsonObject.has("cust_no") ? jsonObject.getString("cust_no") : "";
                                     UFaceConfig.INSTANCE.setHASH(custNo);
+
+                                    Log.d("ESLOG-Res-Msg", msg);
+                                    Log.d("ESLOG-Res-copde", code);
+                                    Log.d("ESLOG-Res-custNo", custNo);
 
                                     if (code.equals("00000")) {
                                         showAlertDialog(UFaceConfig.idkey + " Success in verification.", (DialogInterface.OnClickListener)(new DialogInterface.OnClickListener() {

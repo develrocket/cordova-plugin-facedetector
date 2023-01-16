@@ -108,15 +108,9 @@ public class FaceDetector extends CordovaPlugin {
 
     @Override
     public void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
-        if(resultCode == Activity.RESULT_OK){
-            Bundle extras = data.getExtras();// Get data sent by the Intent
-            String information = extras.getString("data"); // data parameter will be send from the other activity.
-            this.callbackContext.success(information);
-            return;
-        }else if(resultCode == Activity.RESULT_CANCELED){
-            this.callbackContext.success("");
-            return;
-        }
+        String result = UFaceConfig.INSTANCE.getHASH();
+        Log.d("ESLOG-FDEND", result);
+        this.callbackContext.success(result);
         // Handle other results if exists.
         super.onActivityResult(requestCode, resultCode, data);
     }

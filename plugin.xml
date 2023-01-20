@@ -51,6 +51,7 @@
         <lib-file src="src/android/UFaceDetectorLite1.0.2.aar" />
         <lib-file src="src/android/UFaceFRClient1.0.0.aar" />
         <source-file src="src/android/activity_face_camera.xml" target-dir="res/layout"/>
+        <source-file src="src/android/faceline.png" target-dir="res/drawable-mdpi"/>
         <preference name="ANDROID_SUPPORT_V4_VERSION" default="27.+" />
     </platform>
 </plugin>

@@ -13,6 +13,23 @@
     <js-module name="FaceDetector" src="www/facedetector.js">
         <clobbers target="cordova.plugins.faceDetector" />
     </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="FaceDetector">
+                <param name="ios-package" value="FaceDetector"/>
+            </feature>
+        </config-file>
+        <source-file src="src/ios/FaceDetector.swift" />
+        <source-file src="src/ios/BaseViewController.swift" />
+        <source-file src="src/ios/FaceDetectViewController.swift" />
+        <source-file src="src/ios/FaceError.swift" />
+        <source-file src="src/ios/FaceResultData.swift" />
+        <source-file src="src/ios/Extensions.swift" />
+        <dependency id="cordova-plugin-add-swift-support" version="1.7.2"/>
+        <resource-file src="src/ios/EsCare.storyboard"/>
+    </platform>
+
     <platform name="android">
         <source-file src="src/android/com/metsakuur/escaredemo/FaceDetector.java"
             target-dir="app/src/main/java/com/metsakuur/escaredemo" />

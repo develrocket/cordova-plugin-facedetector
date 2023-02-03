@@ -78,7 +78,7 @@ public class FaceCameraActivity extends AppCompatActivity implements UFaceDetect
         }
 
         this.uFaceDetector.setUFaceXPreviewView(this.faceXPreviewView);
-        String licenseKey = "4F5A46527631008159DB9F7FCCB6BC3D6170E79B3F1DF734BDC103035E9264D38EFF4ECB88BE5DD2509E27199D03A183B4A8D6EC0A32E9AE";
+        String licenseKey = "4F5A46527631008199272120BD24EDEBC2B45E9A8A76847759B27D7AE9AC2CCF57861312A8E32236B4B3ADCE688D85DCB2246933112643EA";
         this.uFaceDetector.initDetector(
             this.context,
             licenseKey,

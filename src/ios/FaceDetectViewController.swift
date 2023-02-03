@@ -31,7 +31,7 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.detector.initDetector(licenseKey: "4F5A46527631008159DB9F7FCCB6BC3D6170E79B3F1DF734BDC103035E9264D38EFF4ECB88BE5DD2509E27199D03A183B4A8D6EC0A32E9AE", modelDirectory: Bundle.main.resourcePath!)
+        self.detector.initDetector(licenseKey: "4F5A46527631008199272120BD24EDEBC2B45E9A8A76847759B27D7AE9AC2CCF57861312A8E32236B4B3ADCE688D85DCB2246933112643EA", modelDirectory: Bundle.main.resourcePath!)
     }
 
     func ufaceDetectorSetCameraSessionComplete() {
@@ -158,7 +158,7 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
     }
 
     public static func createViewController(type: DetectType) -> FaceDetectViewController {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard(name: "EsCare", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "FaceDetectViewController") as! FaceDetectViewController
         vc.type = type
         vc.modalPresentationStyle = .fullScreen

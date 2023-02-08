@@ -1,3 +1,4 @@
+import Cordova
 //
 //  FaceDetector.swift
 //  EsCareDemo
@@ -9,7 +10,10 @@ import Foundation
 
 
 @objc(FaceDetector)
-public class FaceDetector : CDVPlugin, BaseViewController, MyDelegate {
+public class FaceDetector : CDVPlugin, MyDelegate {
+
+    var callbackId: String?
+
     @objc
     func scan(_ command: CDVInvokedUrlCommand) {
 //        let echo = command.argument(at: 0) as! String?
@@ -23,20 +27,20 @@ public class FaceDetector : CDVPlugin, BaseViewController, MyDelegate {
 //        }
 //
 //        self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
-        let type = command.argument(at: 0) as! String?
-        let deviceId = command.argument(at: 1) as! String?
+        let type = command.argument(at: 0) as! Int
+        let deviceId = command.argument(at: 1) as! String? ?? ""
 
-        self.custNo = deviceId
+        self.callbackId = command.callbackId
 
-        let detect = FaceDetectViewController.createViewController(type: FaceDetectViewController.DetectType(rawValue: Int(type)) ?? .regist)
+        let detect = FaceDetectViewController.createViewController(type: FaceDetectViewController.DetectType(rawValue: type) ?? .regist, custNo: deviceId)
         detect.delegate = self
-        self.present(detect, animated: true)
+        self.viewController.present(detect, animated: true)
     }
 
     func returnDetectResult(text: String) {
         let pluginResult:CDVPluginResult
         pluginResult = CDVPluginResult.init(status: CDVCommandStatus_OK, messageAs: text)
-        self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
+        self.commandDelegate.send(pluginResult, callbackId: self.callbackId)
     }
 
 }

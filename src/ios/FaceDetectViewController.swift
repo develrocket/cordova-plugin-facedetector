@@ -1,3 +1,4 @@
+import Cordova
 //
 //  FaceDetectViewController.swift
 //  EsCareDemo
@@ -16,6 +17,8 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
         case auth = 1
         case bulk = 2
     }
+
+    var delegate: MyDelegate?
 
     var detector:UFaceDetector!
 
@@ -48,7 +51,7 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
         }else {
             self.openAlertView(msg: String(format: "%@(Code : %@)", error.errorDescription, error.errorCode)) {
                 if let delegate = self.delegate {
-                    delegate.returnDetectResult(self.detectResult)
+                    delegate.returnDetectResult(text: self.detectResult)
                 }
                 self.dismiss(animated: true)
             }
@@ -59,7 +62,7 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
         if result.isFake {
             self.openAlertView(msg: "Detection Fake") {
                 if let delegate = self.delegate {
-                    delegate.returnDetectResult(self.detectResult)
+                    delegate.returnDetectResult(text: self.detectResult)
                 }
                 self.dismiss(animated: true)
             }
@@ -75,7 +78,7 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
                         self.detectResult = result.cust_no ?? ""
                         self.openAlertView(msg: "Success in registeration face.") {
                             if let delegate = self.delegate {
-                                delegate.returnDetectResult(self.detectResult)
+                                delegate.returnDetectResult(text: self.detectResult)
                             }
                             self.dismiss(animated: true)
                         }
@@ -85,7 +88,7 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
                     DispatchQueue.main.async {
                         self.openAlertView(msg: String(format: "%@(code : %@)", error?.errorDescription ?? "Unknown", error?.errorCode ?? "99999")) {
                             if let delegate = self.delegate {
-                                delegate.returnDetectResult(self.detectResult)
+                                delegate.returnDetectResult(text: self.detectResult)
                             }
                             self.dismiss(animated: true)
                         }
@@ -99,7 +102,7 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
                         self.detectResult = result.cust_no ?? ""
                         self.openAlertView(msg: String(format: "%@\nSuccess in verification.", result.cust_no ?? "")) {
                             if let delegate = self.delegate {
-                                delegate.returnDetectResult(self.detectResult)
+                                delegate.returnDetectResult(text: self.detectResult)
                             }
                             self.dismiss(animated: true)
                         }
@@ -108,7 +111,7 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
                     DispatchQueue.main.async {
                         self.openAlertView(msg: String(format: "%@(code : %@)", error?.errorDescription ?? "Unknown", error?.errorCode ?? "99999")) {
                             if let delegate = self.delegate {
-                                delegate.returnDetectResult(self.detectResult)
+                                delegate.returnDetectResult(text: self.detectResult)
                             }
                             self.dismiss(animated: true)
                         }
@@ -122,7 +125,7 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
                         DispatchQueue.main.async {
                             self.openAlertView(msg: String(format: "%@\nSuccess in verification.", result.cust_no ?? "")) {
                                 if let delegate = self.delegate {
-                                    delegate.returnDetectResult(self.detectResult)
+                                    delegate.returnDetectResult(text: self.detectResult)
                                 }
                                 self.dismiss(animated: true)
                             }
@@ -132,7 +135,7 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
                     DispatchQueue.main.async {
                         self.openAlertView(msg: String(format: "%@(code : %@)", error?.errorDescription ?? "Unknown", error?.errorCode ?? "99999")) {
                             if let delegate = self.delegate {
-                                delegate.returnDetectResult(self.detectResult)
+                                delegate.returnDetectResult(text: self.detectResult)
                             }
                             self.dismiss(animated: true)
                         }
@@ -145,7 +148,7 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
 
     @IBAction func onClose(_ sender: UIButton) {
         if let delegate = self.delegate {
-            delegate.returnDetectResult(self.detectResult)
+            delegate.returnDetectResult(text: self.detectResult)
         }
         self.dismiss(animated: true)
     }
@@ -161,6 +164,15 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
         let sb = UIStoryboard(name: "EsCare", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "FaceDetectViewController") as! FaceDetectViewController
         vc.type = type
+        vc.modalPresentationStyle = .fullScreen
+        return vc
+    }
+
+    public static func createViewController(type: DetectType, custNo: String) -> FaceDetectViewController {
+        let sb = UIStoryboard(name: "EsCare", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "FaceDetectViewController") as! FaceDetectViewController
+        vc.type = type
+        vc.custNo = custNo
         vc.modalPresentationStyle = .fullScreen
         return vc
     }

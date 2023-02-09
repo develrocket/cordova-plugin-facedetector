@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZM-RN-qTV">
-                                <rect key="frame" x="143.5" y="164" width="88" height="35"/>
+                                <rect key="frame" x="109.5" y="164" width="156" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Face Registration"/>
                                 <connections>
@@ -26,7 +25,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sk8-K7-c4h">
-                                <rect key="frame" x="82" y="50" width="213" height="34"/>
+                                <rect key="frame" x="140" y="50" width="147.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -34,13 +33,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CustInformation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwG-Ux-PTi">
-                                <rect key="frame" x="20" y="58" width="52" height="18"/>
+                                <rect key="frame" x="20" y="58" width="110" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQg-bo-xr1">
-                                <rect key="frame" x="305" y="51" width="50" height="32"/>
+                                <rect key="frame" x="297.5" y="51" width="57.5" height="32"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
@@ -50,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0x-mY-zB0">
-                                <rect key="frame" x="149" y="219" width="77.5" height="35"/>
+                                <rect key="frame" x="121" y="219" width="133.5" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="1:1 Verification"/>
                                 <connections>
@@ -58,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZn-Pk-Vmo">
-                                <rect key="frame" x="146.5" y="274" width="82.5" height="35"/>
+                                <rect key="frame" x="118.5" y="274" width="138.5" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="1:N Verification"/>
                                 <connections>
@@ -66,7 +65,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XD-Eo-5HV">
-                                <rect key="frame" x="144" y="329" width="87.5" height="35"/>
+                                <rect key="frame" x="125.5" y="329" width="124" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Check status"/>
                                 <connections>
@@ -74,7 +73,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onY-9A-iYC">
-                                <rect key="frame" x="144" y="384" width="87.5" height="35"/>
+                                <rect key="frame" x="132.5" y="384" width="110.5" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Delete face"/>
                                 <connections>
@@ -115,20 +114,23 @@
         <!--Face Detect View Controller-->
         <scene sceneID="izk-Q9-h6O">
             <objects>
-                <viewController storyboardIdentifier="FaceDetectViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jxy-e2-ZN9" customClass="FaceDetectViewController" customModule="EsCareDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FaceDetectViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jxy-e2-ZN9" customClass="FaceDetectViewController" customModule="CordovaPlugins" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vJ6-Ck-LRF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YzB-Qq-MAB">
-                                <rect key="frame" x="40" y="186" width="295" height="295"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="faceline" translatesAutoresizingMaskIntoConstraints="NO" id="AZM-PD-RPC">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="YzB-Qq-MAB" secondAttribute="height" multiplier="1:1" id="njw-7b-7qc"/>
-                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8B-1O-MCA">
-                                <rect key="frame" x="301.5" y="20" width="53.5" height="35"/>
+                                <rect key="frame" x="308" y="20" width="67" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Close"/>
                                 <connections>
@@ -139,11 +141,13 @@
                         <viewLayoutGuide key="safeArea" id="zxZ-uY-vHT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zxZ-uY-vHT" firstAttribute="trailing" secondItem="f8B-1O-MCA" secondAttribute="trailing" constant="20" id="9Md-Js-mc2"/>
-                            <constraint firstItem="zxZ-uY-vHT" firstAttribute="trailing" secondItem="YzB-Qq-MAB" secondAttribute="trailing" constant="40" id="XGF-25-VKo"/>
-                            <constraint firstItem="YzB-Qq-MAB" firstAttribute="leading" secondItem="zxZ-uY-vHT" secondAttribute="leading" constant="40" id="csb-Hj-bqz"/>
+                            <constraint firstItem="zxZ-uY-vHT" firstAttribute="trailing" secondItem="f8B-1O-MCA" secondAttribute="trailing" id="9Md-Js-mc2"/>
+                            <constraint firstItem="YzB-Qq-MAB" firstAttribute="width" secondItem="zxZ-uY-vHT" secondAttribute="width" id="Adr-51-NxM"/>
+                            <constraint firstItem="zxZ-uY-vHT" firstAttribute="trailing" secondItem="YzB-Qq-MAB" secondAttribute="trailing" id="XGF-25-VKo"/>
+                            <constraint firstItem="YzB-Qq-MAB" firstAttribute="leading" secondItem="zxZ-uY-vHT" secondAttribute="leading" id="csb-Hj-bqz"/>
                             <constraint firstItem="YzB-Qq-MAB" firstAttribute="centerY" secondItem="zxZ-uY-vHT" secondAttribute="centerY" id="iFZ-cj-aGH"/>
                             <constraint firstItem="f8B-1O-MCA" firstAttribute="top" secondItem="zxZ-uY-vHT" secondAttribute="top" constant="20" id="jyf-3j-uLY"/>
+                            <constraint firstItem="YzB-Qq-MAB" firstAttribute="height" secondItem="zxZ-uY-vHT" secondAttribute="height" id="tUu-al-27g"/>
                         </constraints>
                     </view>
                     <connections>
@@ -152,10 +156,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Luq-VZ-xGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="844" y="3"/>
+            <point key="canvasLocation" x="844" y="2.2488755622188905"/>
         </scene>
     </scenes>
     <resources>
+        <image name="faceline" width="1563" height="2786"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

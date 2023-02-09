@@ -27,12 +27,13 @@ public class FaceDetector : CDVPlugin, MyDelegate {
 //        }
 //
 //        self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
-        let type = command.argument(at: 0) as! Int
+        let type = command.argument(at: 0) as! String? ?? ""
         let deviceId = command.argument(at: 1) as! String? ?? ""
+        let typeInt = Int(type) ?? 0
 
         self.callbackId = command.callbackId
 
-        let detect = FaceDetectViewController.createViewController(type: FaceDetectViewController.DetectType(rawValue: type) ?? .regist, custNo: deviceId)
+        let detect = FaceDetectViewController.createViewController(type: FaceDetectViewController.DetectType(rawValue: typeInt) ?? .regist, custNo: deviceId)
         detect.delegate = self
         self.viewController.present(detect, animated: true)
     }

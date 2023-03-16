@@ -16,7 +16,7 @@ public class UFaceConfig {
     //id
     public static String idkey = "";
     //server ip
-    public static String SERVER_IP = "http://61.74.179.47";
+    public static String SERVER_IP = "http://220.76.26.177";
     //server port
     public static String SERVER_PORT = ":18080";
     public static String SERVER_URL = "/uface_api/face/common";
@@ -89,7 +89,7 @@ public class UFaceConfig {
     static {
         INSTANCE = new UFaceConfig();
         idkey = "";
-        SERVER_IP = "http://61.74.179.47";
+        SERVER_IP = "http://220.76.26.177";
         SERVER_PORT = ":18080";
         SERVER_URL = "/uface_api/face/common";
         channel = "ESC";

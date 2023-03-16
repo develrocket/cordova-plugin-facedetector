@@ -61,7 +61,7 @@ class BaseViewController: UIViewController {
     }
 
     func callAPI(params: Dictionary<String, String>, success: @escaping (_ result: FaceResultData)->(), failure: @escaping (_ error: FaceError?)->()) {
-        if let url = URL(string: "http://61.74.179.47:18080/uface_api/face/common") {
+        if let url = URL(string: "http://220.76.26.177:18080/uface_api/face/common") {
             var request = URLRequest(url: url)
             request.cachePolicy = .reloadIgnoringLocalCacheData
             request.httpMethod = "POST"

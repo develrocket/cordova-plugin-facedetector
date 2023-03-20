@@ -34,7 +34,7 @@ class FaceDetectViewController: BaseViewController, UFaceDetectorDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.detector.initDetector(licenseKey: "4F5A46527631008199272120BD24EDEBC2B45E9A8A76847759B27D7AE9AC2CCF57861312A8E32236B4B3ADCE688D85DCB2246933112643EA", modelDirectory: Bundle.main.resourcePath!)
+        self.detector.initDetector(licenseKey: "4F5A46527631008199272120BD24EDEBC2B45E9A8A7684770A738FDBC89212B5ED60C2761199313D5B36D408B04403C7A11CDDF3133EDB30", modelDirectory: Bundle.main.resourcePath!)
     }
 
     func ufaceDetectorSetCameraSessionComplete() {
